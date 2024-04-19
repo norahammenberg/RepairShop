@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomers));
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.ToolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -35,16 +36,32 @@
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.repairServicesDataSet = new RepairShop.RepairServicesDataSet();
+            this.repairServicesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customersTableAdapter = new RepairShop.RepairServicesDataSetTableAdapters.CustomersTableAdapter();
+            this.custIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.ToolStrip1.SuspendLayout();
             this.StatusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repairServicesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repairServicesDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCustomers
             // 
             this.dgvCustomers.AllowUserToAddRows = false;
             this.dgvCustomers.AllowUserToDeleteRows = false;
+            this.dgvCustomers.AutoGenerateColumns = false;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.custIdDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn});
+            this.dgvCustomers.DataSource = this.customersBindingSource;
             this.dgvCustomers.Location = new System.Drawing.Point(12, 34);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
@@ -98,6 +115,46 @@
             this.StatusStrip1.Text = "StatusStrip1";
             this.StatusStrip1.UseWaitCursor = true;
             // 
+            // repairServicesDataSet
+            // 
+            this.repairServicesDataSet.DataSetName = "RepairServicesDataSet";
+            this.repairServicesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // repairServicesDataSetBindingSource
+            // 
+            this.repairServicesDataSetBindingSource.DataSource = this.repairServicesDataSet;
+            this.repairServicesDataSetBindingSource.Position = 0;
+            // 
+            // customersBindingSource
+            // 
+            this.customersBindingSource.DataMember = "Customers";
+            this.customersBindingSource.DataSource = this.repairServicesDataSetBindingSource;
+            // 
+            // customersTableAdapter
+            // 
+            this.customersTableAdapter.ClearBeforeFill = true;
+            // 
+            // custIdDataGridViewTextBoxColumn
+            // 
+            this.custIdDataGridViewTextBoxColumn.DataPropertyName = "CustId";
+            this.custIdDataGridViewTextBoxColumn.HeaderText = "CustId";
+            this.custIdDataGridViewTextBoxColumn.Name = "custIdDataGridViewTextBoxColumn";
+            this.custIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +172,9 @@
             this.ToolStrip1.PerformLayout();
             this.StatusStrip1.ResumeLayout(false);
             this.StatusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repairServicesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repairServicesDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +188,12 @@
         internal System.Windows.Forms.ToolStripButton btnDelete;
         internal System.Windows.Forms.ToolStripStatusLabel lblStatus;
         internal System.Windows.Forms.StatusStrip StatusStrip1;
+        private RepairServicesDataSet repairServicesDataSet;
+        private System.Windows.Forms.BindingSource repairServicesDataSetBindingSource;
+        private System.Windows.Forms.BindingSource customersBindingSource;
+        private RepairServicesDataSetTableAdapters.CustomersTableAdapter customersTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
     }
 }

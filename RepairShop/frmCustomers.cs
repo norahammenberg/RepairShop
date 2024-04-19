@@ -19,6 +19,12 @@ namespace RepairShop
 
         private void frmCustomers_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'repairServicesDataSet.Customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter.Fill(this.repairServicesDataSet.Customers);
+            // TODO: This line of code loads data into the 'repairServicesDataSet.Customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter.Fill(this.repairServicesDataSet.Customers);
+            // TODO: This line of code loads data into the 'repairServicesDataSet.Appointments' table. You can move, or remove it, as needed.
+            this.appointmentsTableAdapter.Fill(this.repairServicesDataSet.Appointments);
 
         }
     }
