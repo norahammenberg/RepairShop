@@ -64,8 +64,9 @@
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.ExitToolStripMenuItem.Text = "Exit";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // AppointmentsToolStripMenuItem
             // 
@@ -79,14 +80,16 @@
             // AppointmentsNewMenuItem
             // 
             this.AppointmentsNewMenuItem.Name = "AppointmentsNewMenuItem";
-            this.AppointmentsNewMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.AppointmentsNewMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AppointmentsNewMenuItem.Text = "New";
+            this.AppointmentsNewMenuItem.Click += new System.EventHandler(this.AppointmentsNewMenuItem_Click);
             // 
             // AppointmentsViewMenuItem
             // 
             this.AppointmentsViewMenuItem.Name = "AppointmentsViewMenuItem";
-            this.AppointmentsViewMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.AppointmentsViewMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AppointmentsViewMenuItem.Text = "View";
+            this.AppointmentsViewMenuItem.Click += new System.EventHandler(this.AppointmentsViewMenuItem_Click);
             // 
             // CustomersToolStripMenuItem
             // 
@@ -100,14 +103,16 @@
             // mnuModifyCustomer
             // 
             this.mnuModifyCustomer.Name = "mnuModifyCustomer";
-            this.mnuModifyCustomer.Size = new System.Drawing.Size(99, 22);
+            this.mnuModifyCustomer.Size = new System.Drawing.Size(180, 22);
             this.mnuModifyCustomer.Text = "New";
+            this.mnuModifyCustomer.Click += new System.EventHandler(this.mnuModifyCustomer_Click);
             // 
             // CustomersViewMenuItem
             // 
             this.CustomersViewMenuItem.Name = "CustomersViewMenuItem";
-            this.CustomersViewMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.CustomersViewMenuItem.Size = new System.Drawing.Size(180, 22);
             this.CustomersViewMenuItem.Text = "View";
+            this.CustomersViewMenuItem.Click += new System.EventHandler(this.CustomersViewMenuItem_Click);
             // 
             // Label1
             // 

@@ -12,9 +12,59 @@ namespace RepairShop
 {
     public partial class frmNewAppointment : Form
     {
+        private Appointment app;
+        private RepairTypes repairType;
+        private Customer customer;
         public frmNewAppointment()
         {
             InitializeComponent();
+            app = new Appointment();
+            repairType = new RepairTypes(); 
+            customer = new Customer();
+        }
+
+        private void frmNewAppointment_Load(object sender, EventArgs e)
+        {
+            cboRepairType.DataSource = repairType.Items;
+            cboRepairType.DisplayMember = "Description";
+            cboRepairType.ValueMember = "TypeId";
+
+            cboCustomer.DataSource = customer.Items;
+            cboCustomer.DisplayMember = "Name";
+            cboCustomer.ValueMember = "CustId";
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DateTime scheduledAt;
+            try
+            {
+                scheduledAt = Appointment.CombineDateTime(dtpDate.Value.Date, Convert.ToDateTime(txtTime.Text));
+            }
+            catch (Exception)
+            {
+                errProvider.SetError(txtTime, "Please provide an appointment time");
+                return;
+            }
+            //all the calues we need for a new app, it is saved in a caraibel and taken from the form.
+            var typeId = Convert.ToInt16(cboRepairType.SelectedValue);
+            var custId = Convert.ToInt16(cboCustomer.SelectedValue);
+            var licensed = chkLicensed.Checked;
+
+            //if insert is true, ren the method and then close the form
+            if (app.InsertNewApp(typeId, licensed, txtDescription.Text, custId, scheduledAt))
+            {
+                Close();   
+            }
+            else
+            {
+                lblStatus.Text = $"Cannot add appontment {Appointment.LastError}";
+            }
         }
     }
 }

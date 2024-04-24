@@ -53,24 +53,6 @@
             Label1.TabIndex = 33;
             Label1.Text = "Customer ID:";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(184, 151);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 32;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(61, 151);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 31;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // NameLabel
             // 
             NameLabel.AutoSize = true;
@@ -80,13 +62,6 @@
             NameLabel.TabIndex = 27;
             NameLabel.Text = "Name:";
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(102, 59);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(157, 20);
-            this.txtName.TabIndex = 28;
-            // 
             // PhoneLabel
             // 
             PhoneLabel.AutoSize = true;
@@ -95,6 +70,33 @@
             PhoneLabel.Size = new System.Drawing.Size(41, 13);
             PhoneLabel.TabIndex = 29;
             PhoneLabel.Text = "Phone:";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(184, 151);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 32;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(61, 151);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 31;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(102, 59);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(157, 20);
+            this.txtName.TabIndex = 28;
             // 
             // txtPhone
             // 
@@ -131,6 +133,7 @@
             this.Name = "frmModifyCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Customer";
+            this.Load += new System.EventHandler(this.frmModifyCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

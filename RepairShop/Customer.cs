@@ -154,9 +154,16 @@ namespace RepairShop
             if (MessageBox.Show("Delete the Customer?", "Delete Customer", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 originalCustomerRow = customerAdapter.GetData().FindByCustId(custId);
+
+                if ( customerAdapter.CustomerHasAppointments(originalCustomerRow.CustId) != null)
+                {
+                    MessageBox.Show("Connot delete customer becasue the customer has appontments.");
+                    return false;
+                }
                 //I dont understand how this gives us a number...
                 rowsAffected = customerAdapter.Delete(originalCustomerRow.CustId, originalCustomerRow.Name, originalCustomerRow.Phone);
             }
+           
             //if this statment is true, we retirn true, if rowsaffected is 0 this is false and we return false
             return rowsAffected > 0;
         }

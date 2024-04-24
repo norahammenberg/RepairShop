@@ -73,6 +73,7 @@
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(50, 22);
             this.btnAll.Text = "All";
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // ToolStripSeparator1
             // 
@@ -89,6 +90,7 @@
             // 
             this.cboCustomer.Name = "cboCustomer";
             this.cboCustomer.Size = new System.Drawing.Size(121, 25);
+            this.cboCustomer.SelectedIndexChanged += new System.EventHandler(this.cboCustomer_SelectedIndexChanged);
             // 
             // ToolStripSeparator2
             // 
@@ -104,6 +106,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(50, 22);
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // ToolStripSeparator3
             // 
@@ -124,6 +127,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(50, 22);
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClose
             // 
@@ -133,6 +137,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(40, 22);
             this.btnClose.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // dgvAppointments
             // 
